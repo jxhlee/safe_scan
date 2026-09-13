@@ -22,7 +22,12 @@ PARAGRAPH_SPLIT_RE = re.compile(r"\n\s*\n")
 
 @lru_cache(maxsize=1)
 def get_kiwi() -> Kiwi:
-    return Kiwi()
+    # Dialect and typo-correction dictionaries roughly double Kiwi's memory
+    # footprint (~540MB -> ~310MB without them) and add nothing for the
+    # standard-register, correctly-spelled Korean these documents are
+    # written in - dropping them was the difference between fitting in
+    # Render's free 512MB tier and not.
+    return Kiwi(load_multi_dict=False, load_typo_dict=False)
 
 
 def _clause_spans(text: str) -> list[tuple[str, int, int]]:
