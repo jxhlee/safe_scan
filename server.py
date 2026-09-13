@@ -5,6 +5,7 @@ HTTP instead of a pywebview bridge. Talks to the same UI-agnostic
 from __future__ import annotations
 
 import io
+from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI, File, UploadFile
@@ -16,7 +17,24 @@ from app.loaders.pdf_loader import load_pdf
 
 WEB_DIR = Path(__file__).resolve().parent / "app" / "ui" / "web"
 
-app = FastAPI(title="약관 세이프스캔")
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Loading the Kiwi morpheme model (and building the Aho-Corasick
+    # automaton) takes a few real seconds. Doing it once here, before the
+    # server starts accepting traffic, keeps every actual /api/analyze
+    # request fast - otherwise that cost lands on whichever user sends the
+    # first request after a cold start, which on free hosting tiers can
+    # combine with the platform's own wake-up delay and blow past the
+    # request timeout (surfacing as an HTML error page instead of JSON).
+    try:
+        analyze("제1조(목적) 준비 확인용 문장입니다.", summary_length=3, risk_weight_ratio=0.6)
+    except Exception:  # noqa: BLE001 - warm-up is best-effort, never fatal
+        pass
+    yield
+
+
+app = FastAPI(title="약관 세이프스캔", lifespan=lifespan)
 
 
 class AnalyzeRequest(BaseModel):
