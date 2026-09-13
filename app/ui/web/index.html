@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>약관 세이프스캔</title>
+<link rel="stylesheet" href="style.css">
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem("tos-checker-theme");
+      document.documentElement.dataset.theme = saved || "dark";
+    } catch (e) {
+      document.documentElement.dataset.theme = "dark";
+    }
+  })();
+</script>
+</head>
+<body>
+<header>
+  <div class="header-top">
+    <div class="header-actions">
+      <select id="sample-select">
+        <option value="">샘플 불러오기...</option>
+        <option value="delivery">배달앱 플랫폼 약관 (샘플)</option>
+      </select>
+      <button id="easy-mode-toggle" title="쉬운 모드 전환">👵🧒 쉬운 모드</button>
+      <button id="theme-toggle" title="다크/라이트 모드 전환">🌙</button>
+    </div>
+  </div>
+  <div class="brand">
+    <div class="brand-icon">§</div>
+    <div class="brand-text">
+      <div class="brand-title-row">
+        <h1>약관 세이프스캔</h1>
+        <span class="brand-badge">위험 조항 체크리스트</span>
+      </div>
+      <p class="disclaimer">인공지능 기반 약관 위험 조항 자동 식별 보조 도구입니다. 중요한 계약 전 원문을 반드시 검토하세요.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="panel input-panel">
+    <div class="input-panel-head">
+      <span class="input-panel-title">📄 분석 대상 약관 원문 입력</span>
+      <span class="input-panel-hint">텍스트 직접 붙여넣기 또는 .txt / .pdf 파일 업로드</span>
+    </div>
+    <textarea id="input-text" placeholder="이용약관 또는 개인정보 처리방침 텍스트를 붙여넣으세요."></textarea>
+
+    <div class="input-row input-row-options advanced-control">
+      <div class="stepper-group">
+        <span class="control-label">요약 문장 수</span>
+        <div class="stepper">
+          <button type="button" class="stepper-btn" id="summary-length-dec" aria-label="문장 수 줄이기">−</button>
+          <span class="stepper-value" id="summary-length-value">5</span>
+          <button type="button" class="stepper-btn" id="summary-length-inc" aria-label="문장 수 늘리기">+</button>
+        </div>
+        <span class="control-unit">문장</span>
+      </div>
+      <label>위험 가중치
+        <input type="range" id="risk-ratio" min="0" max="1" step="0.1" value="0.6">
+        <span id="risk-ratio-label">0.6</span>
+      </label>
+    </div>
+
+    <div class="input-row input-row-actions">
+      <button id="btn-open-file">📁 파일 열기 (.txt/.pdf)</button>
+      <input type="file" id="file-input" accept=".txt,.pdf" hidden>
+      <button class="primary" id="btn-analyze">🔍 정밀 분석하기</button>
+    </div>
+    <span class="filename" id="filename-label"></span>
+    <div id="status-message"></div>
+    <div class="stats-bar" id="stats-bar" hidden>
+      <div class="stats-top">
+        <span class="stats-headline"><span class="status-ok-dot"></span><span id="stats-summary-text"></span></span>
+        <span class="stats-meta advanced-control" id="stats-meta-text"></span>
+      </div>
+      <div class="stats-chips" id="stats-chips">
+        <button type="button" class="stat-chip high" id="stat-chip-high"><span class="stat-chip-label">🔴 고위험</span> <b id="stat-high-count">0</b><span class="stat-chip-unit">건</span></button>
+        <button type="button" class="stat-chip mid" id="stat-chip-mid"><span class="stat-chip-label">🟠 중위험</span> <b id="stat-mid-count">0</b><span class="stat-chip-unit">건</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabs-row">
+    <nav class="tabs" id="tabs">
+      <button class="tab-btn active" data-tab="checklist"><span class="tab-label-text">체크리스트</span><span class="tab-count" id="count-checklist"></span></button>
+      <button class="tab-btn" data-tab="summary"><span class="tab-label-text">핵심 요약</span><span class="tab-count" id="count-summary"></span></button>
+      <button class="tab-btn" data-tab="risklist"><span class="tab-label-text">위험 목록</span><span class="tab-count" id="count-risklist"></span></button>
+      <button class="tab-btn" data-tab="original"><span class="tab-label-text">강조된 원문</span></button>
+    </nav>
+    <span class="tabs-hint">🔗 카드를 클릭하면 세부 진단 내용을 확인할 수 있습니다.</span>
+  </div>
+
+  <div class="panel tab-panel active" id="tab-checklist">
+    <div class="checklist-groups" id="checklist-container">
+      <p class="empty-hint">약관을 입력하고 분석하기를 눌러주세요.</p>
+    </div>
+  </div>
+
+  <div class="panel tab-panel" id="tab-summary">
+    <p class="tab-note" id="summary-tab-note">추출한 핵심 문장만 모은 빠른 요약입니다. 전체 위험 조항은 <strong>위험 목록</strong> 탭에서 빠짐없이 확인하세요.</p>
+    <div id="summary-container">
+      <p class="empty-hint">약관을 입력하고 분석하기를 눌러주세요.</p>
+    </div>
+  </div>
+
+  <div class="panel tab-panel" id="tab-risklist">
+    <div class="risk-filter-banner" id="risk-filter-banner" hidden>
+      <span id="risk-filter-text"></span>
+      <button type="button" id="risk-filter-clear">전체 보기</button>
+    </div>
+    <div id="risk-list-container">
+      <p class="empty-hint">약관을 입력하고 분석하기를 눌러주세요.</p>
+    </div>
+  </div>
+
+  <div class="panel tab-panel" id="tab-original">
+    <div class="original-legend">
+      <span><span class="legend-dot 높음"></span>높음</span>
+      <span><span class="legend-dot 중간"></span>중간</span>
+      <span><span class="legend-dot 낮음"></span>낮음</span>
+      <span class="legend-note" id="original-legend-note">— 표시된 문구만 실제 매칭된 위험 표현입니다.</span>
+    </div>
+    <div id="original-view"><span class="empty-hint">약관을 입력하고 분석하기를 눌러주세요.</span></div>
+  </div>
+</main>
+
+<footer>
+  <span class="footer-brand">약관 세이프스캔 · Safe-Reading Engine</span>
+  <span class="footer-disclaimer">※ 본 분석은 인공지능 요약 결과이며, 최종 법적 판단의 근거가 될 수 없습니다.</span>
+  <span class="footer-version">Prototype</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

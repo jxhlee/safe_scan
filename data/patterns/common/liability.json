@@ -1,0 +1,129 @@
+[
+  {
+    "id": "liability_disclaimer_high",
+    "category": "책임",
+    "subcategory": "liability_disclaimer",
+    "signal_type": "risk",
+    "grade": "높음",
+    "patterns": [
+      "회사는 어떠한 경우에도 책임을 지지 않습니다",
+      "일체의 손해에 대해 책임지지 않습니다",
+      "이용자에게 발생한 손해에 대해 일체 책임지지 않습니다",
+      "서비스 이용으로 발생한 손해는 전적으로 이용자가 부담합니다",
+      "무료로 제공되는 서비스에 대해서는 책임을 지지 않습니다"
+    ],
+    "headline": "장애·해킹 등 일체 면책",
+    "explain": "회사의 고의·과실 여부와 무관하게 책임을 포괄적으로 면제하는 조항으로, 이용자에게 부당하게 불리할 소지가 있습니다.",
+    "simple_explain": "무슨 문제가 생겨도 회사는 책임지지 않는다고 해요.",
+    "related_law": "약관의 규제에 관한 법률 제7조(면책조항의 금지)"
+  },
+  {
+    "id": "liability_disclaimer_safe",
+    "category": "책임",
+    "subcategory": "liability_disclaimer",
+    "signal_type": "safe",
+    "grade": null,
+    "patterns": [
+      "회사의 고의 또는 중대한 과실이 있는 경우 책임을 부담합니다",
+      "관련 법령이 정하는 범위 내에서 책임을 부담합니다",
+      "회사의 귀책사유로 인한 손해는 배상합니다"
+    ],
+    "headline": "고의·과실 시 책임 부담 명시",
+    "explain": "회사의 고의·과실이 있는 경우에는 책임을 부담한다고 명시해, 면책 범위를 한정한 조항입니다.",
+    "simple_explain": "회사 잘못이 있으면 책임진다고 했어요. 좋은 신호예요!",
+    "related_law": "약관의 규제에 관한 법률 제7조(면책조항의 금지)"
+  },
+  {
+    "id": "liability_change_high",
+    "category": "책임",
+    "subcategory": "unilateral_change",
+    "signal_type": "risk",
+    "grade": "높음",
+    "patterns": [
+      "사전 통지 없이 약관을 변경할 수 있습니다",
+      "회사는 언제든지 약관을 변경할 수 있습니다",
+      "별도의 동의 절차 없이 변경 사항이 즉시 적용됩니다"
+    ],
+    "headline": "사전예고 없이 즉시적용 변경",
+    "explain": "이용자에게 사전 고지하거나 동의를 받는 절차 없이 약관을 일방적으로 변경할 수 있다는 조항입니다.",
+    "simple_explain": "회사가 미리 알려주지 않고 약관을 바로 바꿀 수 있어요.",
+    "related_law": "약관의 규제에 관한 법률 제5조·제6조(약관의 해석·불공정약관)"
+  },
+  {
+    "id": "liability_change_safe",
+    "category": "책임",
+    "subcategory": "unilateral_change",
+    "signal_type": "safe",
+    "grade": null,
+    "patterns": [
+      "약관 변경 시 최소 7일 전에 공지합니다",
+      "변경된 약관에 이의가 있는 경우 이용계약을 해지할 수 있습니다",
+      "변경 사항을 사전에 공지합니다"
+    ],
+    "headline": "사전공지·이의제기 절차 보장",
+    "explain": "약관 변경 시 사전 공지 기간과 이의제기(계약 해지) 절차를 보장한다고 명시한 조항입니다.",
+    "simple_explain": "약관을 바꾸기 전에 미리 알려주고, 싫으면 그만둘 수 있게 해준다고 했어요. 좋은 신호예요!",
+    "related_law": "약관의 규제에 관한 법률 제5조·제6조(약관의 해석·불공정약관)"
+  },
+  {
+    "id": "liability_content_mid",
+    "category": "책임",
+    "subcategory": "content_rights",
+    "signal_type": "risk",
+    "grade": "중간",
+    "patterns": [
+      "게시물에 대한 저작권은 회사에 귀속됩니다",
+      "이용자가 작성한 콘텐츠를 영구적으로 사용할 수 있습니다",
+      "별도의 대가 없이 게시물을 상업적으로 이용할 수 있습니다",
+      "탈퇴 후에도 게시물의 이용권한은 유지됩니다"
+    ],
+    "headline": "게시물 저작권 회사귀속·무상이용",
+    "explain": "이용자가 작성한 게시물의 권리를 회사에 포괄적으로 귀속시키거나, 무상·영구적으로 이용할 수 있게 하는 조항입니다.",
+    "simple_explain": "내가 올린 글이나 사진을 회사가 마음대로 계속 쓸 수 있어요.",
+    "related_law": "약관의 규제에 관한 법률 제6조(불공정약관조항)"
+  },
+  {
+    "id": "liability_content_safe",
+    "category": "책임",
+    "subcategory": "content_rights",
+    "signal_type": "safe",
+    "grade": null,
+    "patterns": [
+      "게시물의 저작권은 작성자 본인에게 있습니다",
+      "이용자가 게시한 콘텐츠의 권리는 이용자에게 귀속됩니다"
+    ],
+    "headline": "저작권 작성자 귀속 명시",
+    "explain": "게시물의 저작권이 작성자(이용자)에게 있다고 명시한 조항입니다.",
+    "simple_explain": "내가 올린 글의 권리는 나에게 있다고 했어요. 좋은 신호예요!",
+    "related_law": "약관의 규제에 관한 법률 제6조(불공정약관조항)"
+  },
+  {
+    "id": "liability_dispute_mid",
+    "category": "책임",
+    "subcategory": "dispute_jurisdiction",
+    "signal_type": "risk",
+    "grade": "중간",
+    "patterns": [
+      "본사 소재지를 관할하는 법원을 전속 관할로 합니다",
+      "분쟁 발생 시 중재로만 해결하며 소송을 제기할 수 없습니다"
+    ],
+    "headline": "회사소재지 전속관할 지정",
+    "explain": "이용자의 소재지와 무관하게 회사에 유리한 법원을 전속 관할로 정하거나, 소송 제기 권리를 배제하는 조항입니다.",
+    "simple_explain": "문제가 생기면 내가 불리한 곳에서만 재판받을 수 있어요.",
+    "related_law": "약관의 규제에 관한 법률 제14조(소송 제기의 금지 등)"
+  },
+  {
+    "id": "liability_dispute_safe",
+    "category": "책임",
+    "subcategory": "dispute_jurisdiction",
+    "signal_type": "safe",
+    "grade": null,
+    "patterns": [
+      "민사소송법상의 관할법원에 소를 제기할 수 있습니다"
+    ],
+    "headline": "민사소송법상 일반관할 적용",
+    "explain": "민사소송법에 따른 일반 관할을 그대로 적용한다고 명시한 조항입니다.",
+    "simple_explain": "법에서 정한 대로 공정하게 재판받을 수 있다고 했어요. 좋은 신호예요!",
+    "related_law": "약관의 규제에 관한 법률 제14조(소송 제기의 금지 등)"
+  }
+]

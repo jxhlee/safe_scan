@@ -1,0 +1,132 @@
+[
+  {
+    "id": "money_auto_payment_high",
+    "category": "금전",
+    "subcategory": "auto_payment",
+    "signal_type": "risk",
+    "grade": "높음",
+    "patterns": [
+      "별도의 해지 신청이 없는 한 자동으로 갱신",
+      "해지하지 않으면 자동으로 연장됩니다",
+      "무료 체험 종료 후 자동으로 유료로 전환",
+      "자동으로 결제가 진행됩니다"
+    ],
+    "headline": "무통보 자동결제·자동전환",
+    "explain": "이용자가 별도로 해지하지 않으면 자동으로 결제·갱신이 진행된다는 조항입니다.",
+    "simple_explain": "그만 쓰겠다고 말하지 않으면 계속 돈이 빠져나가요.",
+    "related_law": "전자상거래 등에서의 소비자보호에 관한 법률 제21조"
+  },
+  {
+    "id": "money_auto_payment_mid",
+    "category": "금전",
+    "subcategory": "auto_payment",
+    "signal_type": "risk",
+    "grade": "중간",
+    "patterns": [
+      "자동 갱신됩니다",
+      "정기 결제가 이루어집니다",
+      "매월 자동으로 결제됩니다"
+    ],
+    "headline": "자동갱신, 해지안내 불충분",
+    "explain": "자동결제·자동갱신이 이루어지나 해지 절차에 대한 안내가 함께 확인되지 않은 조항입니다.",
+    "simple_explain": "자동으로 계속 결제되는데, 어떻게 멈추는지는 잘 안 나와 있어요.",
+    "related_law": "전자상거래 등에서의 소비자보호에 관한 법률 제21조"
+  },
+  {
+    "id": "money_auto_payment_safe",
+    "category": "금전",
+    "subcategory": "auto_payment",
+    "signal_type": "safe",
+    "grade": null,
+    "patterns": [
+      "자동결제 해지는 언제든지 마이페이지에서 가능합니다",
+      "결제 예정일 최소 7일 전에 사전 안내합니다",
+      "결제 전에 사전 고지합니다"
+    ],
+    "headline": "해지방법·사전고지 명시",
+    "explain": "자동결제 해지 방법과 사전 고지 절차를 명확히 안내한다고 명시한 조항입니다.",
+    "simple_explain": "언제든 쉽게 자동결제를 멈출 수 있고, 결제 전에 미리 알려준다고 했어요. 좋은 신호예요!",
+    "related_law": "전자상거래 등에서의 소비자보호에 관한 법률 제21조"
+  },
+  {
+    "id": "money_refund_high",
+    "category": "금전",
+    "subcategory": "refund_restriction",
+    "signal_type": "risk",
+    "grade": "높음",
+    "patterns": [
+      "환불이 불가능합니다",
+      "일체 환불되지 않습니다",
+      "청약철회가 제한됩니다",
+      "이용 개시 후에는 취소가 불가능합니다",
+      "결제 완료 후 취소 및 환불이 불가합니다"
+    ],
+    "headline": "환불·청약철회 전면 불가",
+    "explain": "환불 또는 청약철회를 전면적으로 제한한다는 조항으로, 법상 보장되는 청약철회권과 배치될 소지가 있습니다.",
+    "simple_explain": "한번 결제하면 환불을 아예 못 받을 수 있어요.",
+    "related_law": "전자상거래 등에서의 소비자보호에 관한 법률 제17조(청약철회)"
+  },
+  {
+    "id": "money_refund_mid",
+    "category": "금전",
+    "subcategory": "refund_restriction",
+    "signal_type": "risk",
+    "grade": "중간",
+    "patterns": [
+      "환불 시 수수료를 차감",
+      "위약금을 공제한 후 환불",
+      "이용일수에 따라 차등 환불"
+    ],
+    "headline": "환불 시 수수료·위약금 공제",
+    "explain": "환불이 가능하나 수수료·위약금 공제 등 조건이 붙는다는 조항입니다.",
+    "simple_explain": "환불은 되지만 수수료를 떼고 돌려줘요.",
+    "related_law": "전자상거래 등에서의 소비자보호에 관한 법률 제17조(청약철회)"
+  },
+  {
+    "id": "money_refund_safe",
+    "category": "금전",
+    "subcategory": "refund_restriction",
+    "signal_type": "safe",
+    "grade": null,
+    "patterns": [
+      "구매 후 7일 이내 청약철회가 가능합니다",
+      "전자상거래법에 따라 청약철회를 보장합니다",
+      "청약철회 시 대금을 환급합니다"
+    ],
+    "headline": "법정 청약철회 기간 보장",
+    "explain": "법정 청약철회 기간과 환급 절차를 명시적으로 보장한다는 조항입니다.",
+    "simple_explain": "법에서 정한 기간 안에는 환불받을 수 있다고 했어요. 좋은 신호예요!",
+    "related_law": "전자상거래 등에서의 소비자보호에 관한 법률 제17조(청약철회)"
+  },
+  {
+    "id": "money_penalty_high",
+    "category": "금전",
+    "subcategory": "penalty_fee",
+    "signal_type": "risk",
+    "grade": "높음",
+    "patterns": [
+      "계약 해지 시 위약금을 부과",
+      "중도 해지 시 잔여 금액 전액을 청구",
+      "해지 수수료가 부과됩니다"
+    ],
+    "headline": "중도해지 위약금·전액청구",
+    "explain": "중도 해지 시 위약금이나 잔여 금액 전액 청구 등 과도한 비용이 발생할 수 있다는 조항입니다.",
+    "simple_explain": "중간에 그만두면 위약금을 많이 내야 할 수 있어요.",
+    "related_law": "약관의 규제에 관한 법률 제8조(손해배상액의 예정)"
+  },
+  {
+    "id": "money_penalty_safe",
+    "category": "금전",
+    "subcategory": "penalty_fee",
+    "signal_type": "safe",
+    "grade": null,
+    "patterns": [
+      "중도 해지에 따른 위약금은 없습니다",
+      "언제든지 위약금 없이 해지할 수 있습니다"
+    ],
+    "headline": "중도해지 위약금 없음 명시",
+    "explain": "중도 해지 시 위약금이 없다고 명시한 조항입니다.",
+    "simple_explain": "중간에 그만둬도 위약금이 없다고 했어요. 좋은 신호예요!",
+    "related_law": "약관의 규제에 관한 법률 제8조(손해배상액의 예정)"
+  }
+]

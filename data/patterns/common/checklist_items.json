@@ -1,0 +1,14 @@
+[
+  { "id": "collect_excessive", "category": "개인정보", "label": "수집 항목", "question": "수집하는 개인정보 항목이 서비스 목적에 비해 과도하지 않은가?", "simple_question": "이 서비스가 필요한 것보다 내 정보를 너무 많이 가져가나요?" },
+  { "id": "third_party_share", "category": "개인정보", "label": "제3자 제공", "question": "개인정보를 제3자에게 제공하거나 위탁하는 범위가 명확한가?", "simple_question": "내 정보를 다른 회사에도 넘기나요?" },
+  { "id": "marketing_use", "category": "개인정보", "label": "마케팅 활용", "question": "마케팅 목적 활용에 대해 별도 동의 및 철회 절차가 보장되는가?", "simple_question": "물어보지도 않고 내 정보로 광고를 보내진 않나요?" },
+  { "id": "retention_period", "category": "개인정보", "label": "보유기간", "question": "개인정보 보유기간과 파기 절차가 명확히 안내되어 있는가?", "simple_question": "제가 그만 쓰면 제 정보를 지워주나요?" },
+  { "id": "overseas_transfer", "category": "개인정보", "label": "국외 이전", "question": "개인정보의 국외 이전 여부와 조건이 명시되어 있는가?", "simple_question": "제 정보가 외국으로 넘어갈 수도 있나요?" },
+  { "id": "auto_payment", "category": "금전", "label": "자동결제·갱신", "question": "자동결제·자동갱신 조건과 해지 방법이 명확히 안내되어 있는가?", "simple_question": "저도 모르게 계속 돈이 빠져나가진 않나요?" },
+  { "id": "refund_restriction", "category": "금전", "label": "환불·청약철회", "question": "환불·청약철회 조건이 부당하게 제한되어 있지 않은가?", "simple_question": "환불하고 싶을 때 돈을 돌려받을 수 있나요?" },
+  { "id": "penalty_fee", "category": "금전", "label": "위약금·수수료", "question": "중도 해지 시 위약금·수수료가 과도하지 않은가?", "simple_question": "그만 쓰고 싶을 때 벌금 같은 돈을 더 내야 하나요?" },
+  { "id": "liability_disclaimer", "category": "책임", "label": "면책조항", "question": "회사의 책임을 포괄적으로 면제하는 조항이 없는가?", "simple_question": "문제가 생겨도 회사가 책임을 안 진다고 하나요?" },
+  { "id": "unilateral_change", "category": "책임", "label": "약관 변경", "question": "약관 변경 시 사전 고지 및 이의제기 절차가 보장되는가?", "simple_question": "규칙이 바뀌면 저한테 미리 알려주나요?" },
+  { "id": "content_rights", "category": "책임", "label": "게시물 권리", "question": "게시물(콘텐츠)의 권리 귀속이 이용자에게 불리하지 않은가?", "simple_question": "제가 올린 글이나 사진은 여전히 제 것인가요?" },
+  { "id": "dispute_jurisdiction", "category": "책임", "label": "분쟁 해결", "question": "분쟁 해결 절차(관할법원·중재)가 이용자에게 부당하게 불리하지 않은가?", "simple_question": "문제가 생기면 저한테 불리한 곳에서만 해결해야 하나요?" }
+]

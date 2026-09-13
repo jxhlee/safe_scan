@@ -1,0 +1,5 @@
+pyahocorasick>=2.1.0
+kiwipiepy>=0.18.0
+networkx>=3.3
+scipy>=1.13
+pypdf>=5.0
